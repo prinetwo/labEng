@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Insert title here</title>
+</h:head>
+<h:body>
+	<h1>Gestão de quarto do Hotel Riuton</h1>
+	<h:form>
+	<h:panelGrid columns="2">
+		<h:outputLabel value="Id:"/>
+		<h:inputText value="#{quartoMB.quartoAtual.id}"/>
+		
+		<h:outputLabel value="Numero:"/>
+		<h:inputText value="#{quartoMB.quartoAtual.numero}"/>
+		
+		<h:outputLabel value="Tipo:"/>
+		<h:inputText value="#{quartoMB.quartoAtual.tipo}"/>
+		
+		<h:outputLabel value="Descricao:"/>
+		<h:inputText value="#{quartoMB.quartoAtual.descricao}"/>
+		
+		<h:outputLabel value="Preco:"/>
+		<h:inputText value="#{quartoMB.quartoAtual.preco}"/>
+		
+		<h:outputLabel value="Area:"/>
+		<h:inputText value="#{quartoMB.quartoAtual.area}"/>
+		
+		<h:commandButton value="Salvar" action="#{quartoMB.salvar}"/>
+		<h:commandButton value="Pesquisar" action="#{quartoMB.pesquisar}"/>
+	</h:panelGrid>
+	
+	<h:dataTable value="#{quartoMB.quartos}" var="q" rendered="#{not empty(quartoMB.quartos)}">
+		<h:column>#{q.id}</h:column>
+		<h:column>#{q.numero}</h:column>
+		<h:column>#{q.tipo}</h:column>
+		<h:column>#{q.preco}</h:column>
+		<h:column>#{q.area}</h:column>
+	</h:dataTable>
+	
+	</h:form>
+</h:body>
+</html>

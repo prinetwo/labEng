@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+
+body {
+	background-color: #40A2C1;
+}
+
+
+#painelMenu {
+	position: absolute;
+	width: 600px;
+	height: 400px;
+	left: calc((100% - 600px) /2);
+	top: calc((100% - 400px) /2);
+	background-image: url("./../img/logo.jpg");
+
+}
+
+
+#formLogin {
+	position: absolute;
+	left: 60%;
+	top: 50%;
+	color: white;
+	background-color: transparent;
+	
+}
+
