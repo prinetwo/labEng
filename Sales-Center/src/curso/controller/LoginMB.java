@@ -17,7 +17,7 @@ public class LoginMB {
 		String pagina = "login";
 		
 		if ("admin".equals(txtUsuario) && "123456".equals(txtSenha)) {
-			pagina = "quarto?faces-redirect=true";
+			pagina = "/index?faces-redirect=true";
 			usuarioAtual = new Usuario();
 			usuarioAtual.setEmail("antoniorcn@hotmail.com");
 			usuarioAtual.setNome("Antonio Rodrigues");
