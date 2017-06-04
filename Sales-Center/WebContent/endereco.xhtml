@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Sales-Center</title>
+</h:head>
+<h:body>
+	<ui:composition template="template/layout.xhtml">
+		<ui:define name="content">
+			<p:tabMenu activeIndex="1" id="tabMenu">
+				<p:menuitem value="Contato/Conta" outcome="/ui/menu/tabMenu"
+					icon="ui-icon-person" url="/contatoConta.xhtml">
+				</p:menuitem>
+				<p:menuitem value="Endereco" outcome="/ui/menu/tabMenu"
+					icon="ui-icon-search" url="/endereco.xhtml">
+				</p:menuitem>
+				<p:menuitem value="Faturamento" outcome="/ui/menu/tabMenu"
+					icon="ui-icon-document" url="/perfilFaturamento.xhtml">
+				</p:menuitem>
+				<p:menuitem value="Crédito" outcome="/ui/menu/tabMenu"
+					icon="ui-icon-wrench" url="/analiseCredito.xhtml">
+				</p:menuitem>
+			</p:tabMenu>
+
+
+
+			<div id="formularioEndereco">
+				<h:form>
+					<h:panelGrid columns="2" cellpadding="5">
+
+						<p:outputLabel for="cep" value="CEP:" />
+						<p:inputMask id="cep" value="#{enderecoMB.cep}" mask="99999-999" />
+
+						<p:outputLabel for="cidade" value="Cidade:" />
+						<p:inputText id="cidade" value="#{enderecoMB.cidade}" />
+
+						<p:outputLabel for="estado" value="Estado: " />
+						<p:inputText id="estado" value="#{enderecoMB.estado}" />
+
+						<p:outputLabel for="bairro" value="Bairro:" />
+						<p:inputText id="bairro" value="#{enderecoMB.bairro}" />
+
+						<p:outputLabel for="rua" value="Rua:" />
+						<p:inputMask id="rua" value="#{enderecoMB.rua}" />
+
+						<p:outputLabel for="numero" value="Número:" />
+						<p:inputText id="numero" value="#{enderecoMB.numero}" />
+
+						<p:outputLabel for="complemento1" value="Complemento 1:" />
+						<p:inputText id="complemento1" value="#{enderecoMB.complemento1}" />
+
+						<p:outputLabel for="complemento2" value="Complemento 2:" />
+						<p:inputText id="complemento2" value="#{enderecoMB.complemento2}" />
+
+						<p:commandButton value="Reset" type="reset" />
+						<p:commandButton value="Submit" update="display"
+							oncomplete="PF('dlg').show()" />
+					</h:panelGrid>
+
+					<p:dialog widgetVar="dlg" modal="true" resizable="false"
+						header="Confirmar informações" showEffect="fade">
+						<p:panelGrid id="display" columns="2" columnClasses="label,value">
+							<h:outputText value="CEP: " />
+							<h:outputText  value="#{enderecoMB.cep}" />
+
+							<h:outputText value="Estado: " />
+							<h:outputText  value="#{enderecoMB.estado}" />
+
+							<h:outputText value="Cidade: " />
+							<h:outputText  value="#{enderecoMB.cidade}" />
+
+							<h:outputText value="Bairro: " />
+							<h:outputText  value="#{enderecoMB.bairro}" />
+
+							<h:outputText value="Rua: " />
+							<h:outputText  value="#{enderecoMB.rua}" />
+
+							<h:outputText value="Numero: " />
+							<h:outputText  value="#{enderecoMB.numero}" />
+
+							<h:outputText value="Complemento 1: " />
+							<h:outputText  value="#{enderecoMB.complemento1}" />
+
+							<h:outputText value="Complemento 2: " />
+							<h:outputText  value="#{enderecoMB.complemento2}" />
+
+							<h:outputText value="" />
+							<h:commandButton id="confirmar" value="confirmar"
+								action="#{enderecoMB.salvar}" />
+
+						</p:panelGrid>
+					</p:dialog>
+				</h:form>
+
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

@@ -12,40 +12,40 @@
 	<ui:composition template="template/layout.xhtml">
 		<ui:define name="content">
 			<h1>Index</h1>
-			<h:form>
-				<h:panelGrid columns="2">
-					<h:outputLabel value="Id:" />
-					<h:inputText value="#{quartoMB.quartoAtual.id}" />
+<!-- 			<h:form> -->
+<!-- 				<h:panelGrid columns="2"> -->
+<!-- 					<h:outputLabel value="Id:" /> -->
+<!-- 					<h:inputText value="#{quartoMB.quartoAtual.id}" /> -->
 
-					<h:outputLabel value="Numero:" />
-					<h:inputText value="#{quartoMB.quartoAtual.numero}" />
+<!-- 					<h:outputLabel value="Numero:" /> -->
+<!-- 					<h:inputText value="#{quartoMB.quartoAtual.numero}" /> -->
 
-					<h:outputLabel value="Tipo:" />
-					<h:inputText value="#{quartoMB.quartoAtual.tipo}" />
+<!-- 					<h:outputLabel value="Tipo:" /> -->
+<!-- 					<h:inputText value="#{quartoMB.quartoAtual.tipo}" /> -->
 
-					<h:outputLabel value="Descricao:" />
-					<h:inputText value="#{quartoMB.quartoAtual.descricao}" />
+<!-- 					<h:outputLabel value="Descricao:" /> -->
+<!-- 					<h:inputText value="#{quartoMB.quartoAtual.descricao}" /> -->
 
-					<h:outputLabel value="Preco:" />
-					<h:inputText value="#{quartoMB.quartoAtual.preco}" />
+<!-- 					<h:outputLabel value="Preco:" /> -->
+<!-- 					<h:inputText value="#{quartoMB.quartoAtual.preco}" /> -->
 
-					<h:outputLabel value="Area:" />
-					<h:inputText value="#{quartoMB.quartoAtual.area}" />
+<!-- 					<h:outputLabel value="Area:" /> -->
+<!-- 					<h:inputText value="#{quartoMB.quartoAtual.area}" /> -->
 
-					<h:commandButton value="Salvar" action="#{quartoMB.salvar}" />
-					<h:commandButton value="Pesquisar" action="#{quartoMB.pesquisar}" />
-				</h:panelGrid>
+<!-- 					<h:commandButton value="Salvar" action="#{quartoMB.salvar}" /> -->
+<!-- 					<h:commandButton value="Pesquisar" action="#{quartoMB.pesquisar}" /> -->
+<!-- 				</h:panelGrid> -->
 
-				<h:dataTable value="#{quartoMB.quartos}" var="q"
-					rendered="#{not empty(quartoMB.quartos)}">
-					<h:column>#{q.id}</h:column>
-					<h:column>#{q.numero}</h:column>
-					<h:column>#{q.tipo}</h:column>
-					<h:column>#{q.preco}</h:column>
-					<h:column>#{q.area}</h:column>
-				</h:dataTable>
+<!-- 				<h:dataTable value="#{quartoMB.quartos}" var="q" -->
+<!-- 					rendered="#{not empty(quartoMB.quartos)}"> -->
+<!-- 					<h:column>#{q.id}</h:column> -->
+<!-- 					<h:column>#{q.numero}</h:column> -->
+<!-- 					<h:column>#{q.tipo}</h:column> -->
+<!-- 					<h:column>#{q.preco}</h:column> -->
+<!-- 					<h:column>#{q.area}</h:column> -->
+<!-- 				</h:dataTable> -->
 
-			</h:form>
+<!-- 			</h:form> -->
 		</ui:define>
 	</ui:composition>
 </h:body>

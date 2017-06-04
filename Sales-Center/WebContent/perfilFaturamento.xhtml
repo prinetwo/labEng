@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Sales-Center</title>
+</h:head>
+<h:body>
+	<ui:composition template="template/layout.xhtml">
+		<ui:define name="content">
+			<p:tabMenu activeIndex="2" id="tabMenu">
+				<p:menuitem value="Contato/Conta" outcome="/ui/menu/tabMenu"
+					icon="ui-icon-person" url="/contatoConta.xhtml">
+				</p:menuitem>
+				<p:menuitem value="Endereco" outcome="/ui/menu/tabMenu"
+					icon="ui-icon-search" url="/endereco.xhtml">
+				</p:menuitem>
+				<p:menuitem value="Faturamento" outcome="/ui/menu/tabMenu"
+					icon="ui-icon-document" url="/perfilFaturamento.xhtml">
+				</p:menuitem>
+				<p:menuitem value="Crédito" outcome="/ui/menu/tabMenu"
+					icon="ui-icon-wrench" url="/analiseCredito.xhtml">
+				</p:menuitem>
+			</p:tabMenu>
+
+
+			<div id="formularioFaturamento">
+				<h:form>
+					<h:panelGrid columns="2" cellpadding="5">
+
+						<p:outputLabel for="formaPagamento" value="Forma de Pagamento:" />
+						<p:inputText id="formaPagamento" value="#{faturamentoMB.formaPagamento}"/>
+
+						<p:outputLabel for="nome" value="Data de vencimento:" />
+						<p:inputMask id="nome" value="#{faturamentoMB.dataVencimento}" 
+							mask="99/99/9999" />
+
+						<p:outputLabel for="canalDeVendas" value="Canal de vendas: " />
+						<p:inputText id="canalDeVendas" value="#{faturamentoMB.canalDeVendas}"/>
+
+						<p:outputLabel for="produto" value="Tipo de produto: " />
+						<p:inputText id="produto" value="#{faturamentoMB.produto}"/>
+						
+						<p:outputLabel for="responsavel" value="Responsavel técnico: " />
+						<p:inputText id="responsavel" value="#{faturamentoMB.responsavel}"/>
+
+						<p:commandButton value="Reset" type="reset" />
+						<p:commandButton value="Submit" update="display"
+							oncomplete="PF('dlg').show()" />
+					</h:panelGrid>
+
+					<p:dialog widgetVar="dlg" modal="true" resizable="false"
+						header="Confirmar informações" showEffect="fade">
+						<p:panelGrid id="display" columns="2" columnClasses="label,value">
+							<h:outputText value="Forma de pagamento: " />
+							<h:outputText value="#{faturamentoMB.formaPagamento}"/>
+
+							<h:outputText value="Data de vencimento: " />
+							<h:outputText value="#{faturamentoMB.dataVencimento}" />
+
+							<h:outputText value="Canal de vendas: " />
+							<h:outputText value="#{faturamentoMB.canalDeVendas}"/>
+
+							<h:outputText value="Produto: " />
+							<h:outputText value="#{faturamentoMB.produto}"/>
+
+							<h:outputText value="Responsavel: " />
+							<h:outputText value="#{faturamentoMB.responsavel}"/>
+
+							<h:outputText value="" />
+							<h:commandButton value="confirmar"
+								action="#{faturamentoMB.salvar}" />
+
+						</p:panelGrid>
+					</p:dialog>
+				</h:form>
+
+			</div>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

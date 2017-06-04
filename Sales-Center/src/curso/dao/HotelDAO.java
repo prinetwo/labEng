@@ -2,11 +2,12 @@ package curso.dao;
 
 import java.util.List;
 
-import curso.entity.Quarto;
+import curso.entity.Contato;
+
 
 public interface HotelDAO {
 	
-	void adicionar(Quarto q);
-	List<Quarto> pesquisarPorNumero(String numero);
+	void adicionar(Contato q);
+	List<Contato> pesquisarPorCPF(String cpf);
 
 }

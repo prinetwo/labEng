@@ -19,11 +19,12 @@ public class LoginMB {
 		if ("admin".equals(txtUsuario) && "123456".equals(txtSenha)) {
 			pagina = "/index?faces-redirect=true";
 			usuarioAtual = new Usuario();
-			usuarioAtual.setEmail("antoniorcn@hotmail.com");
-			usuarioAtual.setNome("Antonio Rodrigues");
+			usuarioAtual.setEmail("wanderjunior@live.com");
+			usuarioAtual.setNome("Wander Junior");
 			usuarioAtual.setSenha(txtSenha);
 			usuarioAtual.setUsuario(txtUsuario);
 			usuarioAtual.setPerfil("admin");
+			System.out.println("Login "+usuarioAtual.getNome());
 		}
 		
 		return pagina;
