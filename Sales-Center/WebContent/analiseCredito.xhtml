@@ -37,9 +37,9 @@
 						<p:inputText id="plano" value="#{creditoMB.plano}" />
 
 						<p:outputLabel for="quantidade" value="quantidade: " />
-						<p:inputText id="quantidade" value="#{creditoMB.quantidade}" />
+						<p:inputText id="quantidade" value="#{creditoMB.quantidade}" maxlength="1"/>
 						<p:outputLabel value="" />
-						<p:slider for="quantidade" />
+						<p:slider for="quantidade" maxValue="9" />
 
 						<p:outputLabel for="responsavel" value="Responsável técnico: " />
 						<p:inputText id="responsavel" value="#{creditoMB.responsavel}" />
