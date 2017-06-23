@@ -8,6 +8,7 @@ public class Credito {
 	private String plano;
 	private int quantidade;
 	private String responsavel;
+	private String nome;
 	
 	public String getPlano() {
 		return plano;
@@ -26,6 +27,12 @@ public class Credito {
 	}
 	public void setResponsavel(String responsavel) {
 		this.responsavel = responsavel;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 	

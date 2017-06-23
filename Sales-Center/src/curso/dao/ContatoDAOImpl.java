@@ -15,8 +15,8 @@ public class ContatoDAOImpl implements ContatoDAO{
 	@Override
 	public void adicionar(Contato c) {
 		Connection con = DBUtil.instance().getConnection();
-		String sql = "INSERT INTO quarto (id, numero, tipo, descricao, preco, area) "
-					+ "VALUES (?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO TB_Contato (id_Contato, nome, nascimento, cpf, telefone, celular, email) "
+					+ "VALUES (1, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1,  c.getNome());
@@ -35,7 +35,7 @@ public class ContatoDAOImpl implements ContatoDAO{
 	public List<Contato> pesquisarPorCpf(String cpf) {
 		List<Contato> contatos = new ArrayList<Contato>();
 		Connection con = DBUtil.instance().getConnection();
-		String sql = "SELECT * FROM contato WHERE cpf like ?";
+		String sql = "SELECT * FROM TB_Contato WHERE cpf like ?";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1,  "%" + cpf + "%");

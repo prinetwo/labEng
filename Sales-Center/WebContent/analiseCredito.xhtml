@@ -32,7 +32,9 @@
 			<div id="formularioFaturamento">
 				<h:form>
 					<h:panelGrid columns="2" cellpadding="5">
-
+						<p:outputLabel for="nome" value="Nome:" />
+						<p:inputText id="nome" value="#{creditoMB.nome}" />
+						
 						<p:outputLabel for="plano" value="Plano:" />
 						<p:inputText id="plano" value="#{creditoMB.plano}" />
 

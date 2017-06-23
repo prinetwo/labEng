@@ -18,13 +18,14 @@ public class CreditoMB {
 	private int quantidade;
 	private String responsavel;
 	private Credito credito;
+	private String nome;
 	
 	public String salvar() {
 		credito = new Credito();
 		credito.setPlano(plano);
 		credito.setQuantidade(quantidade);
 		credito.setResponsavel(responsavel);
-		
+		credito.setNome(nome);
 		System.out.println("salvando análise de crédito");
 		return "/contatoConta?faces-redirect=true";
 	}
@@ -47,6 +48,16 @@ public class CreditoMB {
 	}
 	public void setResponsavel(String responsavel) {
 		this.responsavel = responsavel;
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 	
