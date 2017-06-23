@@ -61,39 +61,60 @@
 						<p:commandButton value="Reset" type="reset" />
 						<p:commandButton value="Submit" update="display"
 							oncomplete="PF('dlg').show()" />
+
+
+
+						<p:commandButton id="consultar" value="Consultar"
+							action="#{enderecoMB.consultar}" />
+
+						<p:commandButton id="Excluir" value="Excluir" update="display2"
+							oncomplete="PF('excl').show()" />
+
 					</h:panelGrid>
 
 					<p:dialog widgetVar="dlg" modal="true" resizable="false"
 						header="Confirmar informações" showEffect="fade">
 						<p:panelGrid id="display" columns="2" columnClasses="label,value">
 							<h:outputText value="CEP: " />
-							<h:outputText  value="#{enderecoMB.cep}" />
+							<h:outputText value="#{enderecoMB.cep}" />
 
 							<h:outputText value="Estado: " />
-							<h:outputText  value="#{enderecoMB.estado}" />
+							<h:outputText value="#{enderecoMB.estado}" />
 
 							<h:outputText value="Cidade: " />
-							<h:outputText  value="#{enderecoMB.cidade}" />
+							<h:outputText value="#{enderecoMB.cidade}" />
 
 							<h:outputText value="Bairro: " />
-							<h:outputText  value="#{enderecoMB.bairro}" />
+							<h:outputText value="#{enderecoMB.bairro}" />
 
 							<h:outputText value="Rua: " />
-							<h:outputText  value="#{enderecoMB.rua}" />
+							<h:outputText value="#{enderecoMB.rua}" />
 
 							<h:outputText value="Numero: " />
-							<h:outputText  value="#{enderecoMB.numero}" />
+							<h:outputText value="#{enderecoMB.numero}" />
 
 							<h:outputText value="Complemento 1: " />
-							<h:outputText  value="#{enderecoMB.complemento1}" />
+							<h:outputText value="#{enderecoMB.complemento1}" />
 
 							<h:outputText value="Complemento 2: " />
-							<h:outputText  value="#{enderecoMB.complemento2}" />
+							<h:outputText value="#{enderecoMB.complemento2}" />
 
 							<h:outputText value="" />
 							<h:commandButton id="confirmar" value="confirmar"
 								action="#{enderecoMB.salvar}" />
 
+						</p:panelGrid>
+					</p:dialog>
+
+
+
+					<p:dialog widgetVar="excl" modal="true" resizable="false"
+						header="Confirmar exclusão" showEffect="fade">
+						<p:panelGrid id="display2" columns="3"
+							columnClasses="label,buttom,buttom">
+							<h:outputText value="TEM Certeza que deseja Excluir?" />
+							<h:commandButton id="sim" value="SIM"
+								action="#{enderecoMB.excluir}" />
 						</p:panelGrid>
 					</p:dialog>
 				</h:form>

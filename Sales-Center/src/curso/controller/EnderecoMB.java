@@ -39,6 +39,16 @@ public class EnderecoMB {
 		return "/perfilFaturamento?faces-redirect=true";
 	}
 
+	
+	public String consultar() {
+		return "";
+	}
+	
+	public String excluir(){
+		return "";
+	}
+	
+	
 	public String getCep() {
 		return cep;
 	}

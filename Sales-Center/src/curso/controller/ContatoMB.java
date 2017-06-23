@@ -1,10 +1,14 @@
 package curso.controller;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+import curso.dao.ContatoDAOImpl;
+import curso.dao.DBUtil;
 import curso.entity.Contato;
 
 @ManagedBean
@@ -19,10 +23,12 @@ public class ContatoMB {
 	private String email;
 	
 	private List<Contato> contatos = new ArrayList<Contato>();
-
+	private ContatoDAOImpl dao = new ContatoDAOImpl();
+	
 	private Contato contatoAtual;
 
 	public String salvar() {
+		
 		contatoAtual = new Contato();
 		contatoAtual.setCpf(cpf);
 		contatoAtual.setNome(nome);
@@ -31,9 +37,20 @@ public class ContatoMB {
 		contatoAtual.setCelular(celular);
 		contatoAtual.setEmail(email);
 		System.out.println("salvando contato:" + contatoAtual.getNome());
-		if(nome.equals("Vendramel") || nome.equals("Wendramel") || nome.equals("vendramel") || nome.equals("wendramel"))
-			System.out.println("REPROVADO! DIRETO SEM DÓ E SEM CUSPE! FAZ AS LISTAS? -14");
+		dao.adicionar(contatoAtual);
+		System.out.println("Foi pro banco!");
 		return "/endereco?faces-redirect=true";
+	}
+	
+	
+	public String consultar() {
+		List<Contato> contatos = dao.pesquisarPorCpf(this.cpf);
+		contatoAtual = contatos.
+		return "";
+	}
+	
+	public String excluir(){
+		return "";
 	}
 
 	public String getNome() {

@@ -30,6 +30,14 @@ public class CreditoMB {
 		return "/contatoConta?faces-redirect=true";
 	}
 	
+	public String consultar() {
+		return "";
+	}
+	
+	public String excluir(){
+		return "";
+	}
+	
 	
 	public String getPlano() {
 		return plano;

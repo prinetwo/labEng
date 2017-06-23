@@ -8,10 +8,20 @@ public class DBUtil {
 	private static DBUtil instancia;
 	private Connection con;
 	
+	private static String serverName = "localhost";
+	private static String portNumber = "1521";
+	private static String servico = "xe";
+	private static String userName = "system";
+	private static String password = "1234";
+
+	private static String url = "jdbc:oracle:thin:@" + serverName + ":" + portNumber + ":" + servico;
+
+	
+	
 	private DBUtil() { 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sales", "root", "root");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con = DriverManager.getConnection(url, userName, password);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

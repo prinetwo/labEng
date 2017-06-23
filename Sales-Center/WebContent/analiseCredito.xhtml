@@ -49,6 +49,13 @@
 						<p:commandButton value="Reset" type="reset" />
 						<p:commandButton value="Análise de Crédito" update="display"
 							oncomplete="PF('dlg').show()" />
+
+
+						<p:commandButton id="consultar" value="Consultar"
+							action="#{creditoMB.consultar}" />
+
+						<p:commandButton id="Excluir" value="Excluir" update="display2"
+							oncomplete="PF('excl').show()" />
 					</h:panelGrid>
 
 					<p:dialog widgetVar="dlg" modal="true" resizable="false"
@@ -58,6 +65,18 @@
 							<h:commandButton value="OK" action="#{creditoMB.salvar}" />
 						</p:panelGrid>
 					</p:dialog>
+
+
+					<p:dialog widgetVar="excl" modal="true" resizable="false"
+						header="Confirmar exclusão" showEffect="fade">
+						<p:panelGrid id="display2" columns="3"
+							columnClasses="label,buttom,buttom">
+							<h:outputText value="TEM Certeza que deseja Excluir?" />
+							<h:commandButton id="sim" value="SIM"
+								action="#{faturamentoMB.excluir}" />
+						</p:panelGrid>
+					</p:dialog>
+					
 				</h:form>
 
 			</div>
