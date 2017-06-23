@@ -5,9 +5,9 @@ import java.util.List;
 import curso.entity.Contato;
 
 
-public interface HotelDAO {
+public interface ContatoDAO {
 	
 	void adicionar(Contato q);
-	List<Contato> pesquisarPorCPF(String cpf);
+	List<Contato> pesquisarPorCpf(String cpf);
 
 }
