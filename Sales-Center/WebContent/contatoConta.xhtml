@@ -39,7 +39,7 @@
 							mask="999.999.999-99" />
 
 						<p:outputLabel for="nome" value="Nome:" />
-						<p:inputText id="nome" value="#{contatoMB.nome}"/>
+						<p:inputText id="nome" value="#{contatoMB.nome}" />
 
 						<p:outputLabel for="nascimento" value="Nascimento: " />
 						<p:inputMask id="nascimento" value="#{contatoMB.nascimento}"
@@ -59,6 +59,14 @@
 						<p:commandButton value="Reset" type="reset" />
 						<p:commandButton value="Submit" update="display"
 							oncomplete="PF('dlg').show()" />
+
+
+						<p:commandButton id="consultar" value="Consultar"
+							action="#{contatoMB.consultar}" />
+
+						<p:commandButton id="Excluir" value="Excluir" update="display2"
+							oncomplete="PF('excl').show()" />
+
 					</h:panelGrid>
 
 					<p:dialog widgetVar="dlg" modal="true" resizable="false"
@@ -81,11 +89,21 @@
 
 							<h:outputText value="Celular: " />
 							<h:outputText id="ssnValue" value="#{contatoMB.celular}" />
-							
-							
-							<h:outputText value="" />
-							<h:commandButton id="confirmar" value="confirmar" action="#{contatoMB.salvar}" />
 
+
+							<h:outputText value="" />
+							<h:commandButton id="confirmar" value="confirmar"
+								action="#{contatoMB.salvar}" />
+
+						</p:panelGrid>
+					</p:dialog>
+
+					<p:dialog widgetVar="excl" modal="true" resizable="false"
+						header="Confirmar exclusão" showEffect="fade">
+						<p:panelGrid id="display2" columns="3" columnClasses="label,buttom,buttom">
+							<h:outputText value="TEM Certeza que deseja Excluir?" />
+							<h:commandButton id="sim" value="SIM"
+								action="#{contatoMB.excluir}" />
 						</p:panelGrid>
 					</p:dialog>
 				</h:form>

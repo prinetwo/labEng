@@ -35,6 +35,15 @@ public class ContatoMB {
 			System.out.println("REPROVADO! DIRETO SEM DÓ E SEM CUSPE! FAZ AS LISTAS? -14");
 		return "/endereco?faces-redirect=true";
 	}
+	
+	
+	public String consultar() {
+		return "";
+	}
+	
+	public String excluir(){
+		return "";
+	}
 
 	public String getNome() {
 		return nome;

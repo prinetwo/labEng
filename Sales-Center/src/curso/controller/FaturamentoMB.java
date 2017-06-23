@@ -32,6 +32,14 @@ public class FaturamentoMB {
 		return "/analiseCredito?faces-redirect=true";
 	}
 	
+	public String consultar() {
+		return "";
+	}
+	
+	public String excluir(){
+		return "";
+	}
+	
 	
 	public String getFormaPagamento() {
 		return formaPagamento;
